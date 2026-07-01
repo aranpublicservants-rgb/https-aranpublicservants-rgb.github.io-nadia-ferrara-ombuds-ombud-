@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Bilingual, accessible public service information page for Dr. Nadia Ferrara, Ombuds for Indigenous Services Canada and the Privy Council Office.">
+  <title>Dr. Nadia Ferrara | Dre Nadia Ferrara</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #111111;
+      --muted: #4a4a4a;
+      --link: #004b8d;
+      --link-hover: #0535a8;
+      --border: #c8c8c8;
+      --panel: #f6f7f8;
+      --accent: #26374a;
+      --notice: #fff7d6;
+      --focus: #ffbf47;
+      --max: 72rem;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: underline;
+      text-underline-offset: 0.18em;
+    }
+
+    a:hover,
+    a:focus {
+      color: var(--link-hover);
+      text-decoration-thickness: 0.16em;
+    }
+
+    a:focus,
+    button:focus {
+      outline: 0.2rem solid var(--focus);
+      outline-offset: 0.16rem;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid var(--border);
+    }
+
+    .skip-link {
+      position: absolute;
+      left: 0.75rem;
+      top: -5rem;
+      z-index: 10;
+      padding: 0.75rem 1rem;
+      color: #000;
+      background: var(--focus);
+      font-weight: 700;
+    }
+
+    .skip-link:focus {
+      top: 0.75rem;
+    }
+
+    .topline {
+      background: #000;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .container {
+      width: min(100% - 2rem, var(--max));
+      margin-inline: auto;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      background: var(--panel);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      padding: 2rem 0;
+    }
+
+    @media (min-width: 48rem) {
+      .hero {
+        grid-template-columns: 2fr 1fr;
+        align-items: start;
+      }
+    }
+
+    h1,
+    h2,
+    h3 {
+      line-height: 1.25;
+      margin: 0 0 0.75rem;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+    }
+
+    h2 {
+      font-size: clamp(1.55rem, 3vw, 2rem);
+      border-bottom: 0.2rem solid var(--accent);
+      padding-bottom: 0.25rem;
+      margin-top: 2rem;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      margin-top: 1.5rem;
+    }
+
+    p {
+      margin: 0 0 1rem;
+    }
+
+    ul {
+      padding-left: 1.25rem;
+    }
+
+    li {
+      margin-bottom: 0.45rem;
+    }
+
+    .lead {
+      font-size: 1.2rem;
+      max-width: 60rem;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .notice {
+      background: var(--notice);
+      border: 1px solid #d7b54a;
+      padding: 1rem;
+      margin: 1rem 0;
+    }
+
+    .nav-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 1rem;
+      margin: 1rem 0;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1rem;
+    }
+
+    nav a {
+      display: inline-block;
+      padding: 0.35rem 0;
+      font-weight: 700;
+    }
+
+    .profile-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 1rem;
+    }
+
+    .profile-card figcaption {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-top: 0.5rem;
+    }
+
+    .section-card {
+      border: 1px solid var(--border);
+      background: #fff;
+      padding: 1rem;
+      margin: 1rem 0;
+    }
+
+    .publication-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .publication-list li {
+      border-bottom: 1px solid var(--border);
+      padding: 0.9rem 0;
+    }
+
+    .publication-list li:last-child {
+      border-bottom: 0;
+    }
+
+    .tag {
+      display: inline-block;
+      border: 1px solid var(--accent);
+      padding: 0.1rem 0.4rem;
+      margin-right: 0.35rem;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    footer {
+      margin-top: 3rem;
+      padding: 2rem 0;
+      border-top: 1px solid var(--border);
+      background: var(--panel);
+    }
+
+    .small {
+      font-size: 0.95rem;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content | Passer au contenu principal</a>
+
+  <div class="topline" aria-label="classification">UNCLASSIFIED / NON CLASSIFIÉ</div>
+
+  <header>
+    <div class="container hero">
+      <div>
+        <p class="meta">Public service profile | Profil de la fonction publique</p>
+        <h1>Dr. Nadia Ferrara | Dre Nadia Ferrara</h1>
+        <p class="lead">Ombuds for Indigenous Services Canada and the Privy Council Office | Ombuds de Services aux Autochtones Canada et du Bureau du Conseil privé</p>
+        <p class="meta">Last verified: July 1, 2026 | Dernière vérification : 1 juillet 2026</p>
+      </div>
+
+      <figure class="profile-card">
+        <img src="assets/nadia-ferrara.jpg" width="420" height="420" alt="Portrait of Dr. Nadia Ferrara">
+        <figcaption>Use only an approved portrait image. Replace <code>assets/nadia-ferrara.jpg</code> with the approved file before publishing.</figcaption>
+      </figure>
+    </div>
+  </header>
+
+  <main id="main-content" class="container">
+    <section class="notice" aria-labelledby="publishing-note">
+      <h2 id="publishing-note">Publishing note | Note de publication</h2>
+      <p>This page is for public service learning and awareness. It uses factual, public, source-based information and avoids promotional language, commercial endorsement, and personal information that has not been approved for publication.</p>
+      <p lang="fr-CA">Cette page vise l’apprentissage et la sensibilisation dans la fonction publique. Elle utilise des renseignements factuels, publics et fondés sur des sources, sans langage promotionnel, approbation commerciale ni renseignement personnel non approuvé pour publication.</p>
+    </section>
+
+    <nav class="nav-card" aria-label="Page sections">
+      <ul>
+        <li><a href="#english">English</a></li>
+        <li><a href="#francais">Français</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#sources">Sources</a></li>
+        <li><a href="#accessibility">Accessibility</a></li>
+      </ul>
+    </nav>
+
+    <section id="english" lang="en-CA" aria-labelledby="english-heading">
+      <h2 id="english-heading">English</h2>
+
+      <section class="section-card" aria-labelledby="about-heading">
+        <h3 id="about-heading">About Dr. Nadia Ferrara</h3>
+        <p>Dr. Nadia Ferrara is a Government of Canada public servant, applied anthropologist, art therapist, author and ombuds practitioner. Indigenous Services Canada states that she was appointed as Ombuds for both Indigenous Services Canada and the Privy Council Office. The Government Electronic Directory Services also lists her as Ombuds at Indigenous Services Canada.</p>
+        <p>Her public service and academic work brings together ombuds practice, workplace fairness, values and ethics, cultural humility, conflict resolution, Indigenous-settler relations, trauma-informed policy, art therapy, medical anthropology and transcultural psychiatry.</p>
+      </section>
+
+      <section class="section-card" aria-labelledby="role-heading">
+        <h3 id="role-heading">Current role</h3>
+        <p>Dr. Ferrara is Ombuds for Indigenous Services Canada and the Privy Council Office. The Ombuds function supports people in raising workplace concerns confidentially and without fear of reprisal. It also helps identify themes, patterns and systemic issues that may require organizational attention.</p>
+      </section>
+
+      <section class="section-card" aria-labelledby="background-heading">
+        <h3 id="background-heading">Professional background</h3>
+        <ul>
+          <li>Ombuds practitioner in the federal public service.</li>
+          <li>Former Senior Director at Parks Canada, where public biographies state she established the Values, Ethics, Diversity and Inclusion Directorate.</li>
+          <li>Former Executive Director at the Office of the Federal Ombudsman for Victims of Crime, Department of Justice Canada.</li>
+          <li>Former federal public servant at Women and Gender Equality Canada.</li>
+          <li>Former public servant at Indigenous and Northern Affairs Canada, with work on social policies and frameworks in collaboration with Indigenous partners.</li>
+          <li>Before joining the federal public service, she worked as an art therapist specializing in cross-cultural psychotherapy with Indigenous peoples in Quebec and Ontario.</li>
+        </ul>
+      </section>
+
+      <section class="section-card" aria-labelledby="themes-heading">
+        <h3 id="themes-heading">Areas of work and learning</h3>
+        <ul>
+          <li>Ombuds practice and workplace fairness</li>
+          <li>Values and ethics</li>
+          <li>Cultural humility</li>
+          <li>Diversity, equity, inclusion and accessibility</li>
+          <li>Indigenous-settler relations</li>
+          <li>Reconciliation and rehumanization</li>
+          <li>Trauma- and resilience-informed policy development</li>
+          <li>Art therapy, medical anthropology and transcultural psychiatry</li>
+        </ul>
+      </section>
+    </section>
+
+    <section id="francais" lang="fr-CA" aria-labelledby="francais-heading">
+      <h2 id="francais-heading">Français</h2>
+
+      <section class="section-card" aria-labelledby="sujet-heading">
+        <h3 id="sujet-heading">Au sujet de la Dre Nadia Ferrara</h3>
+        <p>La Dre Nadia Ferrara est fonctionnaire au gouvernement du Canada, anthropologue appliquée, art-thérapeute, autrice et praticienne de l’ombuds. Services aux Autochtones Canada indique qu’elle a été nommée ombuds pour Services aux Autochtones Canada et le Bureau du Conseil privé. Les Services d’annuaires gouvernementaux électroniques l’inscrivent aussi comme ombuds à Services aux Autochtones Canada.</p>
+        <p>Ses travaux dans la fonction publique et le milieu universitaire réunissent la pratique de l’ombuds, l’équité en milieu de travail, les valeurs et l’éthique, l’humilité culturelle, la résolution de conflits, les relations entre les Autochtones et les colons, les politiques tenant compte des traumatismes, l’art-thérapie, l’anthropologie médicale et la psychiatrie transculturelle.</p>
+      </section>
+
+      <section class="section-card" aria-labelledby="role-fr-heading">
+        <h3 id="role-fr-heading">Rôle actuel</h3>
+        <p>La Dre Ferrara est ombuds de Services aux Autochtones Canada et du Bureau du Conseil privé. La fonction d’ombuds aide les personnes à soulever des préoccupations en milieu de travail de façon confidentielle et sans crainte de représailles. Elle contribue aussi à cerner des thèmes, des tendances et des enjeux systémiques pouvant nécessiter une attention organisationnelle.</p>
+      </section>
+
+      <section class="section-card" aria-labelledby="parcours-heading">
+        <h3 id="parcours-heading">Parcours professionnel</h3>
+        <ul>
+          <li>Praticienne de l’ombuds dans la fonction publique fédérale.</li>
+          <li>Ancienne directrice principale à Parcs Canada, où des biographies publiques indiquent qu’elle a créé la Direction des valeurs, de l’éthique, de la diversité et de l’inclusion.</li>
+          <li>Ancienne directrice exécutive au Bureau de l’ombudsman fédéral des victimes d’actes criminels, au ministère de la Justice Canada.</li>
+          <li>Ancienne fonctionnaire à Femmes et Égalité des genres Canada.</li>
+          <li>Ancienne fonctionnaire à Affaires autochtones et du Nord Canada, où elle a travaillé à des politiques sociales et à des cadres en collaboration avec des partenaires autochtones.</li>
+          <li>Avant de se joindre à la fonction publique fédérale, elle a travaillé comme art-thérapeute spécialisée en psychothérapie transculturelle auprès de peuples autochtones au Québec et en Ontario.</li>
+        </ul>
+      </section>
+
+      <section class="section-card" aria-labelledby="domaines-heading">
+        <h3 id="domaines-heading">Domaines de travail et d’apprentissage</h3>
+        <ul>
+          <li>Pratique de l’ombuds et équité en milieu de travail</li>
+          <li>Valeurs et éthique</li>
+          <li>Humilité culturelle</li>
+          <li>Diversité, équité, inclusion et accessibilité</li>
+          <li>Relations entre les Autochtones et les colons</li>
+          <li>Réconciliation et réhumanisation</li>
+          <li>Élaboration de politiques tenant compte des traumatismes et de la résilience</li>
+          <li>Art-thérapie, anthropologie médicale et psychiatrie transculturelle</li>
+        </ul>
+      </section>
+    </section>
+
+    <section id="publications" aria-labelledby="publications-heading">
+      <h2 id="publications-heading">Publications and public works | Publications et travaux publics</h2>
+      <p>This list is provided for learning and information. It does not endorse any publisher, retailer, platform or commercial product.</p>
+      <p lang="fr-CA">Cette liste est fournie à des fins d’apprentissage et d’information. Elle ne constitue pas une approbation d’un éditeur, d’un détaillant, d’une plateforme ou d’un produit commercial.</p>
+
+      <h3>Books | Livres</h3>
+      <ul class="publication-list">
+        <li><span class="tag">Book</span> <strong>Emotional Expression Among the Cree Indians: The Role of Pictorial Representations in the Assessment of Psychological Mindedness</strong>. Jessica Kingsley Publishers, 1998/1999. <a href="https://utpdistribution.com/9781853026560/emotional-expression-among-the-cree-indians-the-role-of-pictorial-representations-in-the-assessment-of-psychological-mindedness/">View publisher or catalogue record for Emotional Expression Among the Cree Indians</a>.</li>
+        <li><span class="tag">Book</span> <strong>Healing Through Art: Ritualized Space and Cree Identity</strong>. McGill-Queen’s University Press, 2004. <a href="https://www.si.edu/object/siris_sil_762372">View Smithsonian catalogue record for Healing Through Art</a>.</li>
+        <li><span class="tag">Book</span> <strong>Reconciling and Rehumanizing Indigenous-Settler Relations: An Applied Anthropological Perspective</strong>. Lexington Books, 2015. <a href="https://www.bloomsbury.com/ca/reconciling-and-rehumanizing-indigenoussettler-relations-9780739183441/">View Bloomsbury record for Reconciling and Rehumanizing Indigenous-Settler Relations</a>.</li>
+        <li><span class="tag">Book</span> <strong>In Pursuit of Impact: Trauma- and Resilience-Informed Policy Development</strong>. Lexington Books, 2018. <a href="https://search.worldcat.org/es/title/in-pursuit-of-impact-trauma-and-resilience-informed-policy-development/oclc/1052566704">View WorldCat record for In Pursuit of Impact</a>.</li>
+      </ul>
+
+      <h3>Articles | Articles</h3>
+      <ul class="publication-list">
+        <li><span class="tag">Article</span> <strong>Luke’s Map of the Journey: Art Therapy with a Cree Indian Boy</strong>. Journal of Child and Youth Care, 1991. <a href="https://www.academia.edu/29769451/Lukes_map_of_the_journey_Art_therapy_with_a_Cree_Indian_boy">View record for Luke’s Map of the Journey</a>.</li>
+        <li><span class="tag">Article</span> <strong>Art as a Reflection of Child Development</strong>. American Journal of Art Therapy, 1991. <a href="https://dam-oclc.bac-lac.gc.ca/download?fileName=n009w4384.pdf&id=83cb6080-71fe-4cdc-9d11-4a20856e6fd0&is_thesis=1&oclc_number=898032613">View related thesis record that cites Art as a Reflection of Child Development</a>.</li>
+        <li><span class="tag">Article</span> <strong>Adolescent Narcissism and Ego Regression: An Art Therapy Case Illustration</strong>. Journal of Child and Youth Care, 1992. <a href="https://dokumen.pub/healing-through-art-ritualized-space-and-cree-identity-9780773571983.html">View reference record for Adolescent Narcissism and Ego Regression</a>.</li>
+        <li><span class="tag">Article</span> <strong>Native American Experience of Healing Through Art</strong>. Art Therapy, 1994. <a href="https://www.tandfonline.com/doi/abs/10.1080/07421656.1994.10759088">View Taylor &amp; Francis record for Native American Experience of Healing Through Art</a>.</li>
+        <li><span class="tag">Article</span> <strong>Magazine Photo Collage: A Multicultural Assessment and Treatment Technique</strong>. Art Therapy, 1995. <a href="https://www.tandfonline.com/doi/abs/10.1080/07421656.1995.10759161">View Taylor &amp; Francis record for Magazine Photo Collage</a>.</li>
+        <li><span class="tag">Article</span> <strong>Art Therapy with a Cree Bushman</strong>. Canadian Art Therapy Association Journal, 1996. <a href="https://www.tandfonline.com/doi/abs/10.1080/08322473.1996.11432212">View Taylor &amp; Francis record for Art Therapy with a Cree Bushman</a>.</li>
+        <li><span class="tag">Article</span> <strong>Windigo “Psychosis,” Healing the Sick: Balancing the Self in Northern Canadian Hunting Societies</strong>. Anthropologica, 2004. Co-authored with Guy Lanoue. <a href="https://www.academia.edu/36154779/Windigo_Psychosis_Healing_the_Sick_Balancing_the_Self_in_Northern_Canadian_Hunting_Societies">View record for Windigo “Psychosis,” Healing the Sick</a>.</li>
+        <li><span class="tag">Article</span> <strong>Healing Fragile Selves: Emotional Expression and Psychotherapy Among the Quebec Cree</strong>. European Review of Native American Studies, 2005. Co-authored with Guy Lanoue. <a href="https://www.aio.therai.org.uk/journal/656/find-articles">View journal index for European Review of Native American Studies</a>.</li>
+        <li><span class="tag">Article</span> <strong>The Political Aspects of Emotions and Psychotherapy Among the Quebec Cree</strong>. Thule: Rivista italiana di studi americanistici. Co-authored with Guy Lanoue. <a href="https://www.amerindiano.org/prova-thule/">View Thule issue listing</a>.</li>
+        <li><span class="tag">Article</span> <strong>Generation of Priority Research Questions to Inform Conservation Policy and Management at a National Level</strong>. Conservation Biology, 2011. Multi-author article including Nadia Ferrara. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3108069/">Read the open access article in PubMed Central</a>.</li>
+      </ul>
+
+      <h3>Book chapters, conference papers and reports | Chapitres, communications et rapports</h3>
+      <ul class="publication-list">
+        <li><span class="tag">Chapter</span> <strong>Art Therapy with a Cree Indian Boy: Communication Across Cultures</strong>. In <em>Tapestry of Cultural Issues in Art Therapy</em>, 1998. <a href="https://searchworks.stanford.edu/view/12886369">View Stanford catalogue record for Tapestry of Cultural Issues in Art Therapy</a>.</li>
+        <li><span class="tag">Paper</span> <strong>Stories of Empowerment: Indigenous Women’s Leadership Summer School</strong>. In <em>Papers of the Fifty-Third Algonquian Conference</em>, 2024. <a href="https://algonquianconference.atlas-ling.ca/eng/publications/volumes/volume-53/">View Papers of the Fifty-Third Algonquian Conference</a>.</li>
+        <li><span class="tag">Report</span> <strong>Suicide in Canadian Aboriginal Populations: Emerging Trends in Research and Intervention</strong>. Culture and Mental Health Research Unit, 1993/1994. <a href="https://www.mcgill.ca/tcpsych/research/cmhru/working-papers/report1">View McGill report record</a>.</li>
+        <li><span class="tag">Report</span> <strong>Emerging Trends in Research on Mental Health Among Canadian Aboriginal Peoples</strong>. Culture and Mental Health Research Unit, 1994. <a href="https://publications.gc.ca/collections/collection_2016/bcp-pco/Z1-1991-1-41-97-eng.pdf">View Government of Canada publication PDF</a>.</li>
+      </ul>
+
+      <h3>Theses | Thèses</h3>
+      <ul class="publication-list">
+        <li><span class="tag">Thesis</span> <strong>Art Therapy with a Cree Indian Boy</strong>. Master’s thesis, Vermont College of Norwich University, 1990. <a href="https://dokumen.pub/healing-through-art-ritualized-space-and-cree-identity-9780773571983.html">View reference record for Art Therapy with a Cree Indian Boy</a>.</li>
+        <li><span class="tag">Thesis</span> <strong>The Role of Pictorial Representations in the Assessment of Psychological Mindedness: A Cross-Cultural Perspective</strong>. McGill University, 1996. <a href="https://dam-oclc.bac-lac.gc.ca/download?fileName=n009w4384.pdf&id=83cb6080-71fe-4cdc-9d11-4a20856e6fd0&is_thesis=1&oclc_number=898032613">View thesis PDF from Library and Archives Canada</a>.</li>
+        <li><span class="tag">Thesis</span> <strong>Art Therapy as a Ritualized Space Among the Quebec Cree</strong>. PhD thesis, Université de Montréal, 2002. <a href="https://iportal.usask.ca/search?fulltext=%22Art%20Therapy%20as%20a%20Ritualized%20Space%20Among%20the%20Quebec%20Cree%22">View Indigenous Studies Portal search result for the PhD thesis</a>.</li>
+      </ul>
+
+      <h3>Learning resources | Ressources d’apprentissage</h3>
+      <ul class="publication-list">
+        <li><span class="tag">Learning</span> <strong>Cultural Humility: A Lifelong Journey</strong>. Health Canada learning resource. <a href="https://catalogue.hc-sc.gc.ca/product?catalog=IC24398&amp;cm_locale=en">View Health Canada learning resource</a>.</li>
+        <li><span class="tag">Learning</span> <strong>Cultural Humility, Part 2: Self-Care and Resilience</strong>. International Ombuds Association seminar listing. <a href="https://ioa.memberclicks.net/20-november-2025-seminar">View International Ombuds Association seminar listing</a>.</li>
+      </ul>
+    </section>
+
+    <section id="sources" aria-labelledby="sources-heading">
+      <h2 id="sources-heading">Sources | Sources</h2>
+      <ul>
+        <li><a href="https://new.geds-sage.gc.ca/en/GEDS/?dn=Q049TkFESUEuRkVSUkFSQUBTQUMtSVNDLkdDLkNBLE9VPU9PVFUtQkRPLE9VPURNTy1CU00sT1U9RU8tQkUsT1U9SVNDLVNBQyxPPUdDLEM9Q0E%3D&amp;pgid=015">Government Electronic Directory Services listing for Nadia Ferrara</a></li>
+        <li><a href="https://www.sac-isc.gc.ca/eng/1747914819448/1747914846996">Indigenous Services Canada transition material mentioning the Ombuds role</a></li>
+        <li><a href="https://wiki.gccollab.ca/Policy_Community_Conference_2023%3A_Speaker_Directory">GCcollab Policy Community Conference 2023 speaker directory, English</a></li>
+        <li><a href="https://wiki.gccollab.ca/Conf%C3%A9rence_de_la_Communaut%C3%A9_des_politiques_2023_%3A_R%C3%A9pertoire_des_conf%C3%A9renciers">GCcollab Policy Community Conference 2023 speaker directory, French</a></li>
+        <li><a href="https://www.canada.ca/en/office-federal-ombudsperson-victims-crime/news-nouvelles/newsletters-bulletins/20191001.html">Office of the Federal Ombudsperson for Victims of Crime newsletter mentioning Dr. Ferrara</a></li>
+        <li><a href="https://ioa.memberclicks.net/20-november-2025-seminar">International Ombuds Association seminar biography</a></li>
+        <li><a href="https://catalogue.hc-sc.gc.ca/product?catalog=IC24398&amp;cm_locale=en">Health Canada Cultural Humility learning resource</a></li>
+        <li><a href="https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=25049">Values and Ethics Code for the Public Sector, English</a></li>
+        <li><a href="https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=25049">Code de valeurs et d’éthique du secteur public, français</a></li>
+        <li><a href="https://design.canada.ca/style-guide/">Canada.ca Content Style Guide, English</a></li>
+        <li><a href="https://conception.canada.ca/guide-redaction/">Guide de rédaction du contenu du site Canada.ca, français</a></li>
+        <li><a href="https://a11y.canada.ca/en/">Government of Canada Digital Accessibility Toolkit, English</a></li>
+        <li><a href="https://a11y.canada.ca/fr/">Boîte à outils sur l’accessibilité numérique du gouvernement du Canada, français</a></li>
+      </ul>
+    </section>
+
+    <section id="accessibility" aria-labelledby="accessibility-heading">
+      <h2 id="accessibility-heading">Accessibility and ethics checklist | Liste de vérification de l’accessibilité et de l’éthique</h2>
+      <ul>
+        <li>Use one approved portrait image with meaningful alternative text.</li>
+        <li>Keep English and French content equivalent.</li>
+        <li>Use plain language and descriptive links.</li>
+        <li>Do not rely on colour alone to communicate meaning.</li>
+        <li>Keep headings in a logical order.</li>
+        <li>Check colour contrast before publishing.</li>
+        <li>Test keyboard navigation.</li>
+        <li>Test the page with an automated accessibility checker and, where possible, with a screen reader.</li>
+        <li>Keep the tone factual and non-promotional.</li>
+        <li>Do not include personal details or images unless approved for publication.</li>
+      </ul>
+      <p lang="fr-CA">Avant la publication, vérifier la navigation au clavier, le contraste, les liens, le texte de remplacement de l’image, l’équivalence des deux langues officielles et la conformité aux exigences internes de publication.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container small">
+      <p><strong>Disclaimer | Avis :</strong> This page is an informational public service profile. It is not an official Government of Canada page unless published through an approved Government of Canada platform and approval process.</p>
+      <p lang="fr-CA">Cette page est un profil informatif de la fonction publique. Elle n’est pas une page officielle du gouvernement du Canada sauf si elle est publiée au moyen d’une plateforme et d’un processus d’approbation autorisés du gouvernement du Canada.</p>
+    </div>
+  </footer>
+</body>
+</html>
